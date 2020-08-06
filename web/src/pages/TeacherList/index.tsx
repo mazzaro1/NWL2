@@ -1,33 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-import logoImg from '../../assets/images/logo.svg';
-import backIcon from '../../assets/images/icons/back.svg'
 
 import './styles.css';
 import PageHeader from '../../components/PageHeader';
 import TeacherItens from '../../components/TeacherItens';
+import Input from '../../components/Input';
+import Select from '../../components/Select';
 
 
 function TeacherList(){
+    
     return (
     <div id="page-teacher-list" className="container">
         <PageHeader tittle="Estes são os proffys disponíveis">
             <form  id="search-teachers">
-                <div className="input-block">
-                    <label htmlFor="subject">Matéria</label>
-                    <input type="text" id="subject"/>
-                </div>
+            <Select name="subject" 
+                label="Matéria"
+                options={[
+                    {value:'Artes',label:'Artes'},  
+                    {value:'Biologia',label:'Biologia'},
+                    {value:'Ciências',label:'Ciências'},
+                    {value:'Matemática',label:'Matemática'},
+                    {value:'Física',label:'Física'},
+                    {value:'Educação Física',label:'Educação Física'},
+                    {value:'Filosofia',label:'Filosofia'},
+                    {value:'Português',label:'Português'},
+                    {value:'Informática',label:'Informática'},
+                    {value:'História',label:'História'},
+                    {value:'Quimica',label:'Quimica'}
 
-                <div className="input-block">
-                    <label htmlFor="week_day">Dia da semana</label>
-                    <input type="text" id="subject"/>
-                </div>
+                ]}
+                />
+             <Select name="week_day" 
+                label="Dia da Semana"
+                options={[
+                    {value:'0',label:'Segunda-feira'},  
+                    {value:'1',label:'Terça-feira'},
+                    {value:'2',label:'Quarta-feira'},
+                    {value:'3',label:'Quinta-feira'},
+                    {value:'4',label:'Sexta-feira'},
+                    {value:'5',label:'Sabado-feira'},
+                    {value:'6',label:'Domingo-feira'},
+                    
 
-                <div className="input-block">
-                    <label htmlFor="time">Horário</label>
-                    <input type="text" id="subject"/>
-                </div>
+                ]}
+                />
+             <Input  type ="time" name="time" label="Hora"/>
             </form>
         </PageHeader>
         <main>
